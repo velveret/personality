@@ -1,0 +1,7 @@
+# replaces null bytes in a csv file so that it can be read/processed by python (run once)
+fi = open('../truncated_training.csv', 'rb')
+data = fi.read()
+fi.close()
+fo = open('truncated_training_nonull.csv', 'wb')
+fo.write(data.replace('\x00', ''))
+fo.close()

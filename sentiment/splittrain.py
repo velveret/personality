@@ -21,8 +21,11 @@ posout = csv.writer(posf, delimiter = sep2, quotechar='', quoting=csv.QUOTE_NONE
 negout = csv.writer(negf, delimiter = sep2, quotechar='', quoting=csv.QUOTE_NONE)
 testout = csv.writer(testf, delimiter = sep2, quotechar='', quoting=csv.QUOTE_NONE)
 
-happy = '[:=]-?\)'
-sad = '[:=]-?\('
+# happy = '[:=]-?\)'
+# sad = '[:=]-?\('
+# TODO: replace with smiley regex when actual data
+happy = "is"
+sad = "to"
 posCount = 0
 negCount = 0
 testCount = 0
@@ -32,9 +35,9 @@ for index in range(1, len(sys.argv)):
   f= open(inFilename, 'rb')
   fin = csv.reader(f, delimiter = sep)
   
-  line = 0
+  line = 1
   for row in fin:
-    if (line == 0):
+    if (line == 1):
       line += 1
       continue
     # print row

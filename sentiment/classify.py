@@ -38,12 +38,18 @@ fout = csv.writer(g, delimiter=sep)
 
 line = 1
 for row in fin:
+  if line == 1:
+    headers = ["userid", "message", "updated_time", "n_status", "gender", "neuro", "positive_emoji_count", \
+      "negative_emoji_count", "net_emoji_count", "sentiment"]
+    fout.writerow(headers)
   # silently skip empty lines
   if len(row) == 0:
+    line += 1
     continue
   # complain about malformatted lines
-  if len(row) != 6:
+  if len(row) != 9:
     print "Malformatted line: %i; skipping." % line
+    line += 1
     continue
   text = row[1]
   score = buildclassifier.classify(text)

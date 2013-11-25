@@ -177,7 +177,8 @@ def train(positiveFile='positive.csv', negativeFile='negative.csv', nOccurrences
 
 def classify(text):
   try:
-    with time_limit(2):
+    # note: time limit/SIGALRM doesn't work on Windows
+    # with time_limit(2):
       feat = featurify(text, masterfeats)
       result = classifier.prob_classify(feat)
       probs = dict([(x, result.prob(x)) for x in result.samples()])

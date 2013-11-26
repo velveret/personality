@@ -1,7 +1,12 @@
 # replaces null bytes in a csv file so that it can be read/processed by python (run once)
-fi = open('../truncated_training.csv', 'rb')
+import sys
+if len(sys.argv) < 3:
+  print len(sys.argv)
+  print """USAGE: python removeNull.py [input_file] [output_file]"""
+  sys.exit()
+fi = open(sys.argv[1], 'rb')
 data = fi.read()
 fi.close()
-fo = open('truncated_training_nonull.csv', 'wb')
+fo = open(sys.argv[2], 'wb')
 fo.write(data.replace('\x00', ''))
 fo.close()

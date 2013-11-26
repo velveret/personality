@@ -19,16 +19,15 @@ negf = open(negFilename, 'w')
 testf = open(testFilename, 'w')
 emojiCountf = open(emojiCountFilename, 'w')
 
-posout = csv.writer(posf, delimiter = sep2, quotechar='', quoting=csv.QUOTE_NONE)
-negout = csv.writer(negf, delimiter = sep2, quotechar='', quoting=csv.QUOTE_NONE)
-testout = csv.writer(testf, delimiter = sep2, quotechar='', quoting=csv.QUOTE_NONE)
-emojiCountOut = csv.writer(emojiCountf, delimiter = sep2, quotechar='', quoting=csv.QUOTE_NONE)
+posout = csv.writer(posf, delimiter = sep2, quotechar='', escapechar='\\', quoting=csv.QUOTE_NONE)
+negout = csv.writer(negf, delimiter = sep2, quotechar='', escapechar='\\', quoting=csv.QUOTE_NONE)
+testout = csv.writer(testf, delimiter = sep2, quotechar='', escapechar='\\', quoting=csv.QUOTE_NONE)
+emojiCountOut = csv.writer(emojiCountf, delimiter = sep2, quotechar='', escapechar='\\', quoting=csv.QUOTE_NONE)
 
-# happy = '[:=]-?\)'
-# sad = '[:=]-?\('
-# TODO: replace with smiley regex when actual data
-happy = "is"
-sad = "to"
+happy = '[:=]-?\)'
+sad = '[:=]-?\('
+# happy = "is"
+# sad = "to"
 posCount = 0
 negCount = 0
 testCount = 0

@@ -1,4 +1,5 @@
 import csv
+import re
 import sys
 import cPickle as pickle
 
@@ -8,10 +9,12 @@ def main():
         print "need the name of the csv file to open"
 
     statuses = []
+    timestamp_pattern = re.compile("\d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d")
     with open(sys.argv[1], 'rb') as f:
         reader = csv.reader(f)
         for row in reader:
-            statuses.append(row)
+            if timestamp_pattern.match(row[2]):
+                statuses.append(row)
 
     # if you want to pickle the array, provide a filename to pickle to
     if (len(sys.argv) == 3):

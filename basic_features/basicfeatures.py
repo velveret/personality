@@ -88,8 +88,6 @@ class BasicExtractor:
                             caps[user][0] += 1
                         caps[user][1] += 1
 
-            # Formatting errors are giving this section trouble...
-            """
             if status[2] != "" and status[2] != "\\":
                 day = status[2].split()[0]
                 date_list = day.split("-")
@@ -102,7 +100,6 @@ class BasicExtractor:
                 hour = int(time.split(":")[0])
                 if hour < 5:
                     dark_hours[user] += 1
-            """
 
         for user in lengths.keys():
             self._averages[user] = lengths[user][0] * 1.0 / lengths[user][1]

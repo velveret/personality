@@ -34,7 +34,7 @@ testCount = 0
 
 for index in range(1, len(sys.argv)):
   inFilename = sys.argv[index]
-  f= open(inFilename, 'rb')
+  f= open(inFilename, 'rU')
   fin = csv.reader(f, delimiter = sep)
   
   line = 1

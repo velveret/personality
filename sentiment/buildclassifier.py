@@ -133,6 +133,8 @@ def train(positiveFile='positive.csv', negativeFile='negative.csv', nOccurrences
     fin = csv.reader(f, delimiter = sep)
     for line in fin:
       text = line[1]
+      if (len(line) != 9):
+        print(text)
       # break up into tokens removing all non-word chars
       feat = featurify(text)
       for f in feat:

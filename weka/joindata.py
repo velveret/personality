@@ -13,11 +13,13 @@ else:
   is_test = False
 
 outFile = open(sys.argv[2], 'w')
-outFile_noid = open(sys.argv[2].replace(".", "_noid."), 'w')
+if is_test:
+  outFile_noid = open(sys.argv[2].replace(".", "_noid."), 'w')
 userToFeatures = {}
 processedUsers = []
 out = csv.writer(outFile, delimiter = ",", quotechar='"', escapechar='\\', quoting=csv.QUOTE_ALL)
-out_noid = csv.writer(outFile_noid, delimiter = ",", quotechar='"', escapechar='\\', quoting=csv.QUOTE_ALL)
+if is_test:
+  out_noid = csv.writer(outFile_noid, delimiter = ",", quotechar='"', escapechar='\\', quoting=csv.QUOTE_ALL)
 
 if not(is_test):
   feats = ["userid"]

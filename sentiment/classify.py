@@ -66,6 +66,8 @@ for row in fin:
   row.append(score)
   fout.writerow(row)
   line += 1
+  if line % 100 == 0:
+    print(line)
 
 f.close()
 g.close()

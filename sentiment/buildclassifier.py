@@ -190,4 +190,4 @@ def classify(text):
     print "Featurify timed out for text %s" % text
     return 0.0
 
-train()
+# train()

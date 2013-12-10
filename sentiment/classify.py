@@ -4,8 +4,8 @@ import csv
 
 ##### CHECK USAGE #####
 
-if len(sys.argv) < 3:
-  print """USAGE: python classifier.py [input_filename] [output_filename]
+if len(sys.argv) < 4:
+  print """USAGE: python classifier.py [input_filename] [output_filename] [is_test] 
   
 This script sentiment-analyzes a tweet database given as a file.
 The input format for each row is TweetID <tab> TweetText.
@@ -27,9 +27,16 @@ buildclassifier.load(classifierFile='classifier.pickle',featureFile='features.pi
 
 print "Reading & Classifying tweets..."
 
+if (sys.argv[3] == "true"):
+  is_test = True
+else:
+  is_test = False
 inFilename = sys.argv[1]
 outFilename = sys.argv[2]
-sep = '\t'
+if is_test:
+  sep = ','
+else:
+  sep = '\t'
 
 f = open(inFilename, 'rU')
 g = open(outFilename, 'w')
@@ -39,15 +46,18 @@ fout = csv.writer(g, delimiter=sep)
 line = 1
 for row in fin:
   if line == 1:
-    headers = ["userid", "message", "updated_time", "n_status", "gender", "neuro", "positive_emoji_count", \
+    if not(is_test):
+      headers = ["userid", "message", "updated_time", "n_status", "gender", "neuro", "positive_emoji_count", \
       "negative_emoji_count", "net_emoji_count", "sentiment"]
+    else:
+      headers = ["userid", "message", "updated_time", "n_status", "gender", "sentiment"]
     fout.writerow(headers)
   # silently skip empty lines
   if len(row) == 0:
     line += 1
     continue
   # complain about malformatted lines
-  if len(row) != 9:
+  if (not(is_test) and len(row) != 9) or (is_test and len(row) != 5):
     print "Malformatted line: %i; skipping." % line
     line += 1
     continue

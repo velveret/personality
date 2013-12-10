@@ -3,9 +3,6 @@ import sys
 import csv
 import numpy
 
-def mean(l):
-	sum(l)/len(l)
-
 if len(sys.argv) < 3:
   print len(sys.argv)
   print """USAGE: python reformat.py [input_file] [output_file]"""
@@ -37,12 +34,7 @@ for row in fin:
 	if not(userId in userToSentiment):
 		userToSentiment[userId] = []
 	userToSentiment[userId].append(senti)
-	# out.writerow(row)
 for userid in userToNeuro.keys():
-	#print(userid)
-	#print(userToNeuro[userid])
-	#print(userToSentiment[userid])
-	#print(numpy.mean(userToSentiment[userid]))
 	row = [userid, userToNeuro[userid], numpy.mean(userToSentiment[userid])]
 	out.writerow(row)
 

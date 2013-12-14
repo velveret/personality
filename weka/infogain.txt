@@ -1,0 +1,94 @@
+=== Run information ===
+
+Evaluator:    weka.attributeSelection.InfoGainAttributeEval 
+Search:       weka.attributeSelection.Ranker -T -1.7976931348623157E308 -N -1
+Relation:     test-weka.filters.unsupervised.attribute.Remove-R1-weka.filters.unsupervised.attribute.Normalize-S1.0-T0.0
+Instances:    11650
+Attributes:   36
+              neuro
+              sentiment
+              unigram
+              bigram
+              afinn
+              avg_token_length
+              gender
+              same_gender
+              opposite_gender
+              caps
+              punct
+              weekend
+              night
+              topic0
+              topic1
+              topic2
+              topic3
+              topic4
+              topic5
+              topic6
+              topic7
+              topic8
+              topic9
+              topic10
+              topic11
+              topic12
+              topic13
+              topic14
+              topic15
+              topic16
+              topic17
+              topic18
+              topic19
+              pos_emoji
+              neg_emoji
+              net_emoji
+Evaluation mode:    evaluate on all training data
+
+
+
+=== Attribute Selection on all input data ===
+
+Search Method:
+	Attribute ranking.
+
+Attribute Evaluator (supervised, Class (nominal): 1 neuro):
+	Information Gain Ranking Filter
+
+Ranked attributes:
+ 0.01091    2 sentiment
+ 0.00852    7 gender
+ 0.00751    3 unigram
+ 0.00527    5 afinn
+ 0.00435   24 topic10
+ 0.00363   16 topic2
+ 0.00332   31 topic17
+ 0.00249   18 topic4
+ 0.00231   35 neg_emoji
+ 0.00215   30 topic16
+ 0.00209    4 bigram
+ 0.00176   20 topic6
+ 0.00159   25 topic11
+ 0.00153   29 topic15
+ 0.00148   36 net_emoji
+ 0.00148   32 topic18
+ 0.00107    8 same_gender
+ 0         21 topic7
+ 0         28 topic14
+ 0          9 opposite_gender
+ 0          6 avg_token_length
+ 0         22 topic8
+ 0         33 topic19
+ 0         34 pos_emoji
+ 0         10 caps
+ 0         11 punct
+ 0         12 weekend
+ 0         17 topic3
+ 0         23 topic9
+ 0         26 topic12
+ 0         27 topic13
+ 0         13 night
+ 0         15 topic1
+ 0         14 topic0
+ 0         19 topic5
+
+Selected attributes: 2,7,3,5,24,16,31,18,35,30,4,20,25,29,36,32,8,21,28,9,6,22,33,34,10,11,12,17,23,26,27,13,15,14,19 : 35
+

@@ -1,0 +1,14 @@
+Number of Features = 5158
+Training sentiment classifier...
+accuracy: 0.991185850971
+Most Informative Features
+                    sad. = True              neg : pos    =     50.5 : 1.0
+                  sickkk = True              neg : pos    =     50.5 : 1.0
+                   whyyy = True              neg : pos    =     41.1 : 1.0
+                  stinks = True              neg : pos    =     41.1 : 1.0
+                   wahhh = True              neg : pos    =     38.8 : 1.0
+                stomache = True              neg : pos    =     31.7 : 1.0
+             withdrawals = True              neg : pos    =     31.7 : 1.0
+                   r.i.p = True              neg : pos    =     27.4 : 1.0
+              bronchitis = True              neg : pos    =     26.1 : 1.0
+                  bombed = True              neg : pos    =     24.7 : 1.0
